@@ -1,0 +1,110 @@
+---
+title: "輕鬆學習 R 語言"
+author: "郭耀仁"
+date: "3/27/2017"
+output: html_document
+---
+
+## 基本功
+
+> R, at its heart, is a functional programming (FP) language.
+
+By Hadley Wickham
+
+紮實的基本功包括對於**變數類型**與*資料結構*的掌握程度，以及懂得使用**迴圈**與*流程控制*撰寫邏輯清楚而簡潔的程式。
+
+### 開發環境與語法
+
+1. 安裝 R：[CRAN](https://cran.r-project.org/)
+2. 安裝 RStudio：[RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+![R_logo](https://storage.googleapis.com/learn-r-the-easy-way.appspot.com/screenshots_ch16/Rlogo.png)
+
+#### 基本語法：
+
+1. 使用 `q()` 函數來離開 RStudio。
+2. 如何指派一個物件：
+
+```
+my_obj <- "這是一個文字"
+```
+
+3. 如何輸出一個內建資料框 `cars` 的前六個觀測值：
+
+```{r}
+head(cars)
+```
+
+4. 如何繪圖：
+
+```{r}
+plot(cars)
+```
+
+5. 在程式區塊調整 `echo` 參數為 FALSE：
+
+```{r echo = FALSE}
+head(iris)
+```
+
+6. 在程式區塊調整 `results` 參數為 `"hide"`：
+
+```{r results = "hide"}
+head(iris)
+```
+
+7. 一段會產生警告訊息的程式：
+
+```{r warning = FALSE}
+as.integer("輕鬆學習 R 語言")
+```
+
+8. 一段會有錯誤訊息的程式：
+
+```{r error = TRUE}
+8 + "7"
+```
+
+9. 一段會回傳訊息的程式：
+
+```{r message = FALSE}
+library(tidyverse)
+```
+
+### 變數類型與資料結構
+
+- 變數類型：
+    - 數值
+        - numeric
+        - integer
+        - complex
+    - 邏輯值
+    - 文字
+
+- 資料結構：
+    - 一維
+        - 向量
+        - 因素向量
+    - 二維
+        - 矩陣
+        - 資料框
+    - 多維
+        - 陣列
+        - 清單
+
+### 迴圈與流程控制
+
+## 應用
+
+一但掌握了基本功，就需要**大量**的*應用場景*來磨練這些技巧。
+
+### 讀取資料
+
+|資料格式|函數|套件|
+|--------|----|----|
+|結構化文字|`read.table()`|`utils`|
+|非結構化文字|`readLines()`|`base`|
+|Excel 試算表|`read_excel()`|`readxl`|
+|JSON|`fromJSON()`|`jsonlite`|
+
+### 探索性資料分析
